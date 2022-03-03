@@ -4,7 +4,7 @@ namespace application\controllers;
 
 use application\core\Controller;
 use application\models\Main;
-
+use application\models\Portfolio;
 
 
 class AdminController extends Controller {
@@ -87,7 +87,7 @@ class AdminController extends Controller {
     }
 
     public function portfolioAction() {
-        $mainModel = new Main;
+        $mainModel = new Portfolio();
         $vars = [
             'list' => $mainModel->postsList($this->route)
         ];
