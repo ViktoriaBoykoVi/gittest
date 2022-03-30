@@ -1,23 +1,19 @@
 <?php
+// Version
+define('VERSION', '3.0.3.2');
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// Configuration
+if (is_file('config.php')) {
+	require_once('config.php');
+}
 
-require 'application/lib/Dev.php';
+// Install
+if (!defined('DIR_APPLICATION')) {
+	header('Location: install/index.php');
+	exit;
+}
 
-use application\core\Router;
+// Startup
+require_once(DIR_SYSTEM . 'startup.php');
 
-spl_autoload_register(function($class) {
-    $path = str_replace('\\', '/', $class.'.php');
-    if (file_exists($path)) {
-        require $path;
-    }
-});
-
-session_start();
-
-$router = new Router();
-$router->run();
-
-
+start('catalog');
