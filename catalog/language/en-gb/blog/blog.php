@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']  = 'Guestbook';
+$_['heading_title']  = 'Blog';
 
 // Entry
 $_['entry_guest_name']   = 'Your Name';

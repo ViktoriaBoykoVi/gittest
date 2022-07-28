@@ -567,32 +567,32 @@
                             </div>
                           </div>
                         {% endif %}
-                        {% if product_option.type == 'datetime' %}
-                          <div class="form-group">
-                            <label class="col-sm-2 control-label" for="input-value{{ option_row }}">{{ entry_option_value }}</label>
-                            <div class="col-sm-10">
-                              <div class="input-group datetime">
-                                <input type="text" name="product_option[{{ option_row }}][value]" value="{{ product_option.value }}" placeholder="{{ entry_option_value }}" data-date-format="YYYY-MM-DD HH:mm" id="input-value{{ option_row }}" class="form-control"/> <span class="input-group-btn">
+                          {% if product_option.type == 'datetime' %}
+                              <div class="form-group">
+                                  <label class="col-sm-2 control-label" for="input-value{{ option_row }}">{{ entry_option_value }}</label>
+                                  <div class="col-sm-10">
+                                      <div class="input-group datetime">
+                                          <input type="text" name="product_option[{{ option_row }}][value]" value="{{ product_option.value }}" placeholder="{{ entry_option_value }}" data-date-format="YYYY-MM-DD HH:mm" id="input-value{{ option_row }}" class="form-control"/> <span class="input-group-btn">
                             <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
                             </span></div>
-                            </div>
-                          </div>
-                        {% endif %}
-                        {% if product_option.type == 'select' or product_option.type == 'radio' or product_option.type == 'checkbox' or product_option.type == 'image' %}
-                          <div class="table-responsive">
-                            <table id="option-value{{ option_row }}" class="table table-striped table-bordered table-hover">
-                              <thead>
-                                <tr>
-                                  <td class="text-left">{{ entry_option_value }}</td>
-                                  <td class="text-right">{{ entry_quantity }}</td>
-                                  <td class="text-left">{{ entry_subtract }}</td>
-                                  <td class="text-right">{{ entry_price }}</td>
-                                  <td class="text-right">{{ entry_option_points }}</td>
-                                  <td class="text-right">{{ entry_weight }}</td>
-                                  <td></td>
-                                </tr>
-                              </thead>
-                              <tbody>
+                                  </div>
+                              </div>
+                          {% endif %}
+                          {% if product_option.type == 'select' or product_option.type == 'radio' or product_option.type == 'checkbox' or product_option.type == 'image' %}
+                              <div class="table-responsive">
+                                  <table id="option-value{{ option_row }}" class="table table-striped table-bordered table-hover">
+                                      <thead>
+                                      <tr>
+                                          <td class="text-left">{{ entry_option_value }}</td>
+                                          <td class="text-right">{{ entry_quantity }}</td>
+                                          <td class="text-left">{{ entry_subtract }}</td>
+                                          <td class="text-right">{{ entry_price }}</td>
+                                          <td class="text-right">{{ entry_option_points }}</td>
+                                          <td class="text-right">{{ entry_weight }}</td>
+                                          <td></td>
+                                      </tr>
+                                      </thead>
+                                      <tbody>
 
                                 {% for product_option_value in product_option.product_option_value %}
                                   <tr id="option-value-row{{ option_value_row }}">
@@ -1378,27 +1378,28 @@
 			  html += '	  <div class="col-sm-10"><input type="text" name="product_option[' + option_row + '][value]" value="" placeholder="{{ entry_option_value }}" id="input-value' + option_row + '" class="form-control" /></div>';
 			  html += '	</div>';
 		  }
+          if (item['type'] == 'date') {
+              html += '	<div class="form-group">';
+              html += '	  <label class="col-sm-2 control-label" for="input-value' + option_row + '">{{ entry_option_value }}</label>';
+              html += '	  <div class="col-sm-3"><div class="input-group date"><input type="text" name="product_option[' + option_row + '][value]" value="" placeholder="{{ entry_option_value }}" data-date-format="YYYY-MM-DD" id="input-value' + option_row + '" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></div>';
+              html += '	</div>';
+          }
 
-		  if (item['type'] == 'date') {
-			  html += '	<div class="form-group">';
-			  html += '	  <label class="col-sm-2 control-label" for="input-value' + option_row + '">{{ entry_option_value }}</label>';
-			  html += '	  <div class="col-sm-3"><div class="input-group date"><input type="text" name="product_option[' + option_row + '][value]" value="" placeholder="{{ entry_option_value }}" data-date-format="YYYY-MM-DD" id="input-value' + option_row + '" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></div>';
-			  html += '	</div>';
-		  }
+          if (item['type'] == 'time') {
+              html += '	<div class="form-group">';
+              html += '	  <label class="col-sm-2 control-label" for="input-value' + option_row + '">{{ entry_option_value }}</label>';
+              html += '	  <div class="col-sm-10"><div class="input-group time"><input type="text" name="product_option[' + option_row + '][value]" value="" placeholder="{{ entry_option_value }}" data-date-format="HH:mm" id="input-value' + option_row + '" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></div>';
+              html += '	</div>';
+          }
 
-		  if (item['type'] == 'time') {
-			  html += '	<div class="form-group">';
-			  html += '	  <label class="col-sm-2 control-label" for="input-value' + option_row + '">{{ entry_option_value }}</label>';
-			  html += '	  <div class="col-sm-10"><div class="input-group time"><input type="text" name="product_option[' + option_row + '][value]" value="" placeholder="{{ entry_option_value }}" data-date-format="HH:mm" id="input-value' + option_row + '" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></div>';
-			  html += '	</div>';
-		  }
+          if (item['type'] == 'datetime') {
+              html += '	<div class="form-group">';
+              html += '	  <label class="col-sm-2 control-label" for="input-value' + option_row + '">{{ entry_option_value }}</label>';
+              html += '	  <div class="col-sm-10"><div class="input-group datetime"><input type="text" name="product_option[' + option_row + '][value]" value="" placeholder="{{ entry_option_value }}" data-date-format="YYYY-MM-DD HH:mm" id="input-value' + option_row + '" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></div>';
+              html += '	</div>';
+          }
 
-		  if (item['type'] == 'datetime') {
-			  html += '	<div class="form-group">';
-			  html += '	  <label class="col-sm-2 control-label" for="input-value' + option_row + '">{{ entry_option_value }}</label>';
-			  html += '	  <div class="col-sm-10"><div class="input-group datetime"><input type="text" name="product_option[' + option_row + '][value]" value="" placeholder="{{ entry_option_value }}" data-date-format="YYYY-MM-DD HH:mm" id="input-value' + option_row + '" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></div>';
-			  html += '	</div>';
-		  }
+
 
 		  if (item['type'] == 'select' || item['type'] == 'radio' || item['type'] == 'checkbox' || item['type'] == 'image') {
 			  html += '<div class="table-responsive">';
@@ -1628,4 +1629,4 @@
   $('#option a:first').tab('show');
   //--></script>
 </div>
-{{ footer }} 
+{{ footer }}

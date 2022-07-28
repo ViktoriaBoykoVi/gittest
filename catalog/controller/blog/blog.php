@@ -8,12 +8,12 @@ class ControllerBlogBlog extends Controller {
         $this->document->setTitle($this->language->get('heading_title'));
 
         if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
-            $this->load->model('guestbook/guestbook');
+            $this->load->model('blog/blog');
             $data['subject'] = sprintf('New guestbook entry submitted by %s', $this->request->post['guest_name']);
             $data['message'] = $this->request->post['guest_message'];
             $this->model_guestbook_guestbook->processGuestbookEntry($data);
             $this->session->data['success'] = $this->language->get('text_success');
-            $this->response->redirect($this->url->link('guestbook/entry', '', true));
+            $this->response->redirect($this->url->link('blog/blog', '', true));
         }
 
         $data['success'] = '';
@@ -31,7 +31,7 @@ class ControllerBlogBlog extends Controller {
 
         $data['breadcrumbs'][] = array(
             'text' => $this->language->get('heading_title'),
-            'href' => $this->url->link('guestbook/entry', '', true)
+            'href' => $this->url->link('blog/blog', '', true)
         );
 
         $data['heading_title'] = $this->language->get('heading_title');
@@ -51,7 +51,7 @@ class ControllerBlogBlog extends Controller {
             $data['error_guest_message'] = '';
         }
 
-        $data['action'] = $this->url->link('guestbook/entry', '', true);
+        $data['action'] = $this->url->link('blog/blog', '', true);
 
         if (isset($this->request->post['guest_name'])) {
             $data['guest_name'] = $this->request->post['guest_name'];
@@ -72,7 +72,7 @@ class ControllerBlogBlog extends Controller {
         $data['footer'] = $this->load->controller('common/footer');
         $data['header'] = $this->load->controller('common/header');
 
-        $this->response->setOutput($this->load->view('guestbook/entry', $data));
+        $this->response->setOutput($this->load->view('blog/blog', $data));
     }
 
     protected function validate() {

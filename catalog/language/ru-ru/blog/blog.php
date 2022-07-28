@@ -1,13 +1,13 @@
 <?php
 // Heading
-$_['heading_title']  = 'Blog';
+$_['heading_title']  = 'Блог';
 
 // Entry
-$_['entry_guest_name']   = 'Your Name';
-$_['entry_guest_message']   = 'Message';
-$_['entry_submit']   = 'Submit';
-$_['text_success']   = 'Success: Your entry has been successfully submitted.';
+$_['entry_guest_name']   = 'Имя';
+$_['entry_guest_message']   = 'Сообщение';
+$_['entry_submit']   = 'Отправить';
+$_['text_success']   = 'Успех: Ваша заявка успешно отправлена';
 
 // Error
-$_['error_guest_name'] = 'Please enter Your Name!';
-$_['error_guest_message'] = 'Please enter Message!';
+$_['error_guest_name'] = 'Введите ваше имя, пожалуйста!';
+$_['error_guest_message'] = 'Введите ваше сообщение, пожалуйста!';

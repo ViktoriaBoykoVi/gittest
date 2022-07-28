@@ -1,6 +1,6 @@
 <?php
-class ModelGuestbookGuestbook extends Model {
-    public function processGuestbookEntry($data) {
+class ModelBlogBlog extends Model {
+    public function processBlogBlog($data) {
         // send email notification to store admin
         $mail = new Mail();
         $mail->protocol = $this->config->get('config_mail_protocol');
