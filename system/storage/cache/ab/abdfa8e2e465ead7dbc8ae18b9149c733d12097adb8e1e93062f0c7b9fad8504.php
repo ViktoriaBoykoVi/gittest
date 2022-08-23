@@ -129,7 +129,7 @@ class __TwigTemplate_cf14b54605a246e6396165cc66c86f3f8bb2cef8bee882d711abcc2e1a5
         echo "\">";
         echo (isset($context["text_wishlist"]) ? $context["text_wishlist"] : null);
         echo "</a></li>
-          <li><a href=\"";
+            <li><a href=\"";
         // line 37
         echo (isset($context["newsletter"]) ? $context["newsletter"] : null);
         echo "\">";
@@ -162,7 +162,8 @@ class __TwigTemplate_cf14b54605a246e6396165cc66c86f3f8bb2cef8bee882d711abcc2e1a5
 OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
 Please donate via PayPal to donate@opencart.com
 //-->
-</body></html>";
+</body></html>
+";
     }
 
     public function getTemplateName()
@@ -216,7 +217,7 @@ Please donate via PayPal to donate@opencart.com
 /*           <li><a href="{{ account }}">{{ text_account }}</a></li>*/
 /*           <li><a href="{{ order }}">{{ text_order }}</a></li>*/
 /*           <li><a href="{{ wishlist }}">{{ text_wishlist }}</a></li>*/
-/*           <li><a href="{{ newsletter }}">{{ text_newsletter }}</a></li>*/
+/*             <li><a href="{{ newsletter }}">{{ text_newsletter }}</a></li>*/
 /*         </ul>*/
 /*       </div>*/
 /*     </div>*/
@@ -232,3 +233,4 @@ Please donate via PayPal to donate@opencart.com
 /* Please donate via PayPal to donate@opencart.com*/
 /* //-->*/
 /* </body></html>*/
+/* */

@@ -1,6 +1,7 @@
 <?php
 // Text
 $_['text_home'] = 'Головна';
+$_['text_call'] = 'Передзвоніть нам:';
 $_['text_wishlist'] = 'Закладки (%s)';
 $_['text_shopping_cart'] = 'Кошик';
 $_['text_category'] = 'Категорії';
