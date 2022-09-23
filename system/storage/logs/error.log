@@ -9698,3 +9698,4 @@
 2022-07-28 9:56:09 - PHP Notice:  Undefined index: meta_title in /var/www/html/pub/admin/model/blog/managment.php on line 73
 2022-07-28 10:03:52 - PHP Notice:  Undefined index: meta_title in /var/www/html/pub/admin/model/blog/managment.php on line 73
 2022-07-28 10:04:16 - PHP Notice:  Undefined index: meta_title in /var/www/html/pub/admin/model/blog/managment.php on line 73
+2022-08-15 12:22:42 - PHP Notice:  Undefined index: code in /var/www/html/pub/admin/model/design/layout.php on line 38
